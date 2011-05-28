@@ -1,4 +1,3 @@
-.dim.pl
 .shipit
 Changes
 inc/Module/Install.pm
@@ -18,6 +17,3 @@ t/000_load.t
 t/001_basic.t
 xt/perlcritic.t
 xt/pod.t
-xt/podcoverage.t
-xt/podspell.t
-xt/podsynopsis.t

@@ -57,6 +57,7 @@
 # skip author's files
 \bauthor\b
 \.dim.pl
+^Dist-Maker-Command-list-
 \.bs$
 \.o(?:|bj|ld|ut)$
 nytprof
