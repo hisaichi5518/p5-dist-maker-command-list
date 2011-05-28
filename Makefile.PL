@@ -28,7 +28,7 @@ all_from 'lib/Dist/Maker/Command/list.pm';
 
 requires 'Mouse'                     => 0.70;
 requires 'MouseX::StrictConstructor' => 0.02;
-requires 'MouseX::NativeTraits'      => 0.002;
+#requires 'MouseX::NativeTraits'      => 0.002;
 test_requires 'Test::More' => '0.88';
 
 auto_set_repository;
