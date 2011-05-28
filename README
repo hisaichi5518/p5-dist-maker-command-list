@@ -1,0 +1,35 @@
+This is Perl module Dist::Maker::Command::list.
+
+INSTALLATION
+
+Install cpanm (App::cpanminus) and then run the following command to install
+Dist::Maker::Command::list:
+
+    $ cpanm Dist::Maker::Command::list
+
+If you get an archive of this distribution, unpack it and build it
+as per the usual:
+
+    $ tar xzf Dist-Maker-Command-list-$version.tar.gz
+    $ cd Dist-Maker-Command-list-$version
+    $ perl Makefile.PL
+    $ make && make test
+
+Then install it:
+
+    $ make install
+
+DOCUMENTATION
+
+Dist::Maker::Command::list documentation is available as in POD. So you can do:
+
+    $ perldoc Dist::Maker::Command::list
+
+to read the documentation online with your favorite pager.
+
+LICENSE AND COPYRIGHT
+
+Copyright (c) 2011, hisaichi5518. All rights reserved.
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
