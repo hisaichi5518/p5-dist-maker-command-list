@@ -1,11 +1,12 @@
 package Dist::Maker::Command::list;
+use 5.10.0;
 use Mouse;
 use MouseX::StrictConstructor;
 BEGIN { extends 'Dist::Maker::Base' };
 
 use Module::Find ();
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 sub run {
     my $self = shift;
