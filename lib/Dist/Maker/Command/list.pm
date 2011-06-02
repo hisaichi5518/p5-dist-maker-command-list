@@ -8,12 +8,22 @@ use Module::Find ();
 
 our $VERSION = '0.01';
 
+sub say {
+    print @_, "\n";
+}
 sub run {
     my $self = shift;
-    my @modules = $self->templates;
 
-    for my $module (@modules) {
-        print "$module\n";
+    my @templates = $self->templates;
+    say "Templates:";
+    for my $template (@templates) {
+        say "    $template";
+    }
+
+    my @commands = $self->commands;
+    say "Commands:";
+    for my $command (@commands) {
+        say "    $command";
     }
 
     return 1;
@@ -21,6 +31,9 @@ sub run {
 
 sub templates {
     Module::Find::findallmod('Dist::Maker::Template');
+}
+sub commands {
+    Module::Find::findallmod('Dist::Maker::Command');
 }
 
 no Mouse;
