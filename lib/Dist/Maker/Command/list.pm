@@ -7,23 +7,10 @@ use Module::Find ();
 
 our $VERSION = '0.02';
 
-sub say {
-    print @_, "\n";
-}
 sub run {
     my $self = shift;
-
-    my @templates = $self->templates;
-    say "Templates:";
-    for my $template (@templates) {
-        say "    $template";
-    }
-
-    my @commands = $self->commands;
-    say "Commands:";
-    for my $command (@commands) {
-        say "    $command";
-    }
+    _say_modules("Templates" => $self->templates);
+    _say_modules("Commands"  => $self->commands);
 
     return 1;
 }
@@ -33,6 +20,16 @@ sub templates {
 }
 sub commands {
     Module::Find::findallmod('Dist::Maker::Command');
+}
+sub say {
+    print @_, "\n";
+}
+sub _say_modules {
+    my ($name, @modules) = @_;
+    say "$name:";
+    for my $module (@modules) {
+        say "    $module";
+    }
 }
 
 no Mouse;
