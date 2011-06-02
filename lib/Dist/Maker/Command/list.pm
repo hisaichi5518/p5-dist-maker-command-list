@@ -1,5 +1,4 @@
 package Dist::Maker::Command::list;
-use 5.008_001;
 use Mouse;
 use MouseX::StrictConstructor;
 BEGIN { extends 'Dist::Maker::Base' };
