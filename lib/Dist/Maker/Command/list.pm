@@ -7,7 +7,7 @@ BEGIN { extends 'Dist::Maker::Base' };
 use Module::Find ();
 use Dist::Maker::Util qw(parse_options);
 
-our $VERSION = '0.03';
+our $VERSION = '0.05';
 
 sub pass_through { 0 }
 
