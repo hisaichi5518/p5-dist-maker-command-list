@@ -5,14 +5,29 @@ use MouseX::StrictConstructor;
 BEGIN { extends 'Dist::Maker::Base' };
 
 use Module::Find ();
+use Dist::Maker::Util qw(parse_options);
 
 our $VERSION = '0.03';
 
+sub pass_through { 0 }
+
+sub option_spec {
+    return qw(all templates commands);
+}
+
 sub run {
     my $self = shift;
-    _say_modules("Templates" => $self->templates);
-    _say_modules("Commands"  => $self->commands);
+    my ($options) = $self->parse_options(@_);
 
+    my @actions = $options->{all}       ? qw(templates commands) :
+                  $options->{templates} ? qw(templates)          :
+                  $options->{commands}  ? qw(commands)           : ();
+
+    return usage() unless @actions;
+
+    for my $action (@actions) {
+        _say_modules(ucfirst($action) => $self->$action);
+    }
     return 1;
 }
 
@@ -24,6 +39,19 @@ sub commands {
 }
 sub say {
     print @_, "\n";
+}
+sub usage {
+    print <<"USAGE";
+## All
+dim list --all
+
+## Templates
+dim list --templates
+
+## Commands
+dim list --commands
+USAGE
+    return 1;
 }
 sub _say_modules {
     my ($name, @modules) = @_;
